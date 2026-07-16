@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Knowledge Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Loading & Error States -->
+        <div id="loading-state" class="state-view">
+            <div class="spinner"></div>
+            <p>Loading quiz database...</p>
+        </div>
+        
+        <div id="error-state" class="state-view hidden">
+            <div class="error-icon">✕</div>
+            <p id="error-message">Failed to load quiz parameters.</p>
+        </div>
+
+        <!-- Active Quiz View -->
+        <div id="quiz-view" class="state-view hidden">
+            <header class="quiz-header">
+                <div class="progress-container">
+                    <span id="progress-text">Question 1 of 20</span>
+                    <div class="progress-bar-bg">
+                        <div id="progress-bar-fill"></div>
+                    </div>
+                </div>
+                <div class="score-badge">Score: <span id="live-score">0</span></div>
+            </header>
+
+            <main class="quiz-main">
+    <h2 id="question-text">Question text goes here?</h2>
+    
+    <!-- RESTORED: Main Diagram Container Slot -->
+    <div id="question-image-container"></div>
+
+    <div id="options-container" class="options-grid"></div>
+    
+    <div id="feedback-container" class="feedback-card hidden">
+        <h3 id="feedback-title">Correct!</h3>
+        <p id="explanation-text">Explanation goes here.</p>
+        <button id="next-btn" class="primary-btn">Next Question →</button>
+    </div>
+</main>
+        </div>
+
+        <!-- Final Results View -->
+        <div id="results-view" class="state-view hidden">
+            <div class="results-card">
+                <h2>Quiz Completed!</h2>
+                <div class="final-score-circle">
+                    <span id="final-score">0</span><span class="total-possible">/20</span>
+                </div>
+                <p id="performance-summary">Excellent breakdown performance!</p>
+                <button onclick="window.location.reload();" class="primary-btn">Restart Quiz</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
